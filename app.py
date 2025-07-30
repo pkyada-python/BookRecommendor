@@ -1,5 +1,8 @@
 import streamlit as st
-import pickle
+# import pickle
+
+import joblib
+
 import numpy as np
 
 def recommend_book(book):
@@ -18,10 +21,10 @@ def recommend_book(book):
     return data
 
 st.header("Book Recommender System")
-popular = pickle.load(open('./Model/popular.pkl','rb'))
-books = pickle.load(open('./Model/books.pkl','rb'))
-pt = pickle.load(open('./Model/pt.pkl','rb'))
-similarity_score = pickle.load(open('./Model/similarity_scores.pkl','rb'))
+popular = joblib.load(open('./Model/popular.pkl','rb'))
+books = joblib.load(open('./Model/books.pkl','rb'))
+pt = joblib.load(open('./Model/pt.pkl','rb'))
+similarity_score = joblib.load(open('./Model/similarity_scores.pkl','rb'))
 
 # print(popular.columns.tolist())
 
